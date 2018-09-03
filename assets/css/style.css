@@ -1,0 +1,71 @@
+body {
+    background-image: url("/assets/images/escape-from-new-york-wallpapers-29530-9799543 2.png../images/ThingNewYork.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  
+  /*** Images Clicked ***/
+  .img-thumbnail {
+    background-color: green;
+    border: 2px solid green;
+    height: 200px;
+    width: 200px;
+  }
+  
+  /*** Images- Enemies ***/
+  
+  .enemy {
+    background-color: red;
+    border: 2px solid red;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .chosen-character .img-thumbnail {
+    height: 200px;
+    width: 200px;
+  }
+  
+  
+  .defender-character .img-thumbnail {
+    height: 150px;
+    width: 150px;
+    background-color: green;
+    border: 2px solid green;
+  }
+  
+  .enemy-character {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  
+  .enemy-character .img-thumbnail {
+    background-color: maroon;
+    border: 2px solid maroon;
+  }
+  
+  #wyatt, #jack, #john, #macready, #snake {
+    display: inline-block;
+    text-align: center;
+    margin-right: 1em;
+  }
+  
+  #characters-available {
+    text-align: center;
+  }
+  
+  #chosen-character {
+    text-align: center;
+  }
+  
+  #defender-div {
+    text-align: center;
+  }
+  
+  #game-message {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: 	silver;
+  }
