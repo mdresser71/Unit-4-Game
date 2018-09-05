@@ -1,15 +1,16 @@
 body {
-    background-image: url("assets/images/escape new york background.png");
+    background-image: url("../images/escape new york background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: white;
   }
   
   
   /*** Images Clicked ***/
   .img-thumbnail {
     background-color: green;
-    border: 5px solid green;
+    border: 5px solid rgb(204, 12, 172);
     height: 200px;
     width: 200px;
   }
@@ -30,10 +31,10 @@ body {
   
   
   .defender-character .img-thumbnail {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     background-color: green;
-    border: 5px solid green;
+    border: 5px solid rgb(58, 5, 107);
   }
   
   .enemy-character {
@@ -67,5 +68,13 @@ body {
   #game-message {
       font-size: 1.5em;
       font-weight: bold;
-      color: 	silver;
+      color: 	black;
+  }
+
+  #attack-btn {
+    color: red;
+  }
+
+  #restart {
+    color: green;
   }
