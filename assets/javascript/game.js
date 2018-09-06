@@ -13,13 +13,6 @@ var characters = {
       counterAttackPower: 5,
     },
   
-    john: {
-      name: "John Ruth",
-      health: 90,
-      attackPower: 1,
-      counterAttackPower: 20,
-    },
-  
     macready: {
       name: "RJ MacReady",
       health: 120,
@@ -37,31 +30,16 @@ var characters = {
   
   
   };
-  //Debugging
+ 
   console.log(characters);
   
-  // Has the user selected their character
-  var characterSelected = false;
-  
-  // Has the user selected the defender
+  var characterSelected = false; 
   var defenderSelected = false;
-  
-  // Variable to store the user's chosen character
   var character = {};
-  
-  // Variable to store the chosen enemy
   var defender = {};
-  
-  // Number of enemies defeated
   var enemiesDefeated = 0;
-  
-  // Boolean to indicate whether or not the game is over
   var gameOver = false;
   
-  
-  //FUNCTIONS
-  //===========================================
-  // This function will initialize the character value from the global object variables defined above
   function initializeCharacter(chosenCharacter) {
     character.name = chosenCharacter.name;
     character.health = chosenCharacter.health;
@@ -69,7 +47,6 @@ var characters = {
     character.attackPower = chosenCharacter.attackPower;
   }
   
-  // This function will initialize the defender's value from the global object variables defined above
   function initializeDefender(chosenDefender) {
     defender.name = chosenDefender.name;
     defender.health = chosenDefender.health;
@@ -77,18 +54,15 @@ var characters = {
     defender.attackPower = chosenDefender.attackPower;
   }
   
-  // This function will move the remaining characters to the enemies section
   function moveToEnemies() {
     $(".available-character").removeClass("available-character").addClass("enemy-character");
     $("#enemies-div").append($(".enemy-character"));
   }
   
-  // This function will reset the state of the game
   function resetGame() {
-    // Reset all the health values to the original
+   
     $("#wyatt").children(".health").html(characters.wyatt.health);
     $("#jack").children(".health").html(characters.jack.health);
-    $("#john").children(".health").html(characters.john.health);
     $("#macready").children(".health").html(characters.macready.health);
     $("#snake").children(".health").html(characters.snake.health);
   
@@ -108,32 +82,22 @@ var characters = {
     defender = {};
   }
   
-  //MAIN PROCESS
-  //===========================================
-  // Run Javascript when the HTML has finished loading
   $(document).ready(function() {
   
-    // Hide the "Restart" button and "#game-message" on document load
     $("#restart").hide();
     $("#game-message").empty();
   
-    //Character Selection
     $("#wyatt").on("click", function () {
 
 
         console.log("Wyatt Earp is selected");
         
-        
-        
-        // User is choosing the character
-        
+      
         if(characterSelected === false) {
         
         $("#game-message").empty();
         
-        
-        
-        // Set the user's character
+  
         
         initializeCharacter(characters.wyatt);
         
@@ -141,7 +105,6 @@ var characters = {
         
         
         
-        // Display the chosen character
         
         $("#wyatt").removeClass("available-character").addClass("chosen-character");
         
@@ -157,7 +120,7 @@ var characters = {
         
         } else if ((characterSelected === true) && (defenderSelected === false)) {
         
-        // User is choosing the defender
+    
         
         if($("#wyatt").hasClass("enemy-character")) {
         
@@ -165,7 +128,6 @@ var characters = {
         
         
         
-        // Set the user's enemy
         
         initializeDefender(characters.wyatt);
         
@@ -173,7 +135,6 @@ var characters = {
         
         
         
-        // Add the character to the defender section
         
         $("#wyatt").removeClass("enemy-character").addClass("defender-character");
         
@@ -193,7 +154,6 @@ var characters = {
         
         
         
-        // User is choosing the character
         
         if(characterSelected === false) {
         
@@ -201,7 +161,6 @@ var characters = {
         
         
         
-        // Set the user's character
         
         initializeCharacter(characters.jack);
         
@@ -209,7 +168,6 @@ var characters = {
         
         
         
-        // Display the chosen character
         
         $("#jack").removeClass("available-character").addClass("chosen-character");
         
@@ -217,15 +175,13 @@ var characters = {
         
         
         
-        // Move the remaining characters to the enemies section
         
         moveToEnemies();
         
         
         
         } else if ((characterSelected === true) && (defenderSelected === false)) {
-        
-        // User is choosing the defender
+      
         
         if($("#jack").hasClass("enemy-character")) {
         
@@ -233,7 +189,6 @@ var characters = {
         
         
         
-        // Set the user's enemy
         
         initializeDefender(characters.jack);
         
@@ -241,7 +196,6 @@ var characters = {
         
         
         
-        // Add the character to the defender section
         
         $("#jack").removeClass("enemy-character").addClass("defender-character");
         
@@ -254,14 +208,13 @@ var characters = {
         });
         
         
-        
+
         $("#macready").on("click", function () {
         
         console.log("RJ MacReady is selected");
         
         
         
-        // User is choosing the character
         
         if(characterSelected == false) {
         
@@ -269,7 +222,6 @@ var characters = {
         
         
         
-        // Set the user's character
         
         initializeCharacter(characters.macready);
         
@@ -277,7 +229,6 @@ var characters = {
         
         
         
-        // Display the chosen character
         
         $("#macready").removeClass("available-character").addClass("chosen-character");
         
@@ -285,7 +236,6 @@ var characters = {
         
         
         
-        // Move the remaining characters to the enemies section
         
         moveToEnemies();
         
@@ -293,15 +243,13 @@ var characters = {
         
         } else if ((characterSelected === true) && (defenderSelected == false)) {
         
-        // User is choosing the defender
         
         if($("#macready").hasClass("enemy-character")) {
         
         $("#game-message").empty();
         
         
-        
-        // Set the user's enemy
+      
         
         initializeDefender(characters.macready);
         
@@ -309,7 +257,6 @@ var characters = {
         
         
         
-        // Add the character to the defender section
         
         $("#macready").removeClass("enemy-character").addClass("defender-character");
         
@@ -328,7 +275,6 @@ var characters = {
         
         
         
-        // User is choosing the character
         
         if(characterSelected === false) {
         
@@ -336,7 +282,6 @@ var characters = {
         
         
         
-        // Set the user's character
         
         initializeCharacter(characters.snake);
         
@@ -344,7 +289,6 @@ var characters = {
         
         
         
-        // Display the chosen character
         
         $("#snake").removeClass("available-character").addClass("chosen-character");
         
@@ -352,7 +296,6 @@ var characters = {
         
         
         
-        // Move the remaining characters to the enemies section
         
         moveToEnemies();
         
@@ -360,7 +303,6 @@ var characters = {
         
         } else if ((characterSelected === true) && (defenderSelected === false)) {
         
-        // User is choosing the defender
         
         if($("#snake").hasClass("enemy-character")) {
         
@@ -368,7 +310,6 @@ var characters = {
         
         
         
-        // Set the user's enemy
         
         initializeDefender(characters.snake);
         
@@ -376,7 +317,6 @@ var characters = {
         
         
         
-        // Add the character to the defender section
         
         $("#snake").removeClass("enemy-character").addClass("defender-character");
         
@@ -390,7 +330,6 @@ var characters = {
         
         
         
-        //Attack button is clicked
         
         $("#attack-btn").on("click", function() {
         
@@ -398,11 +337,11 @@ var characters = {
         
         
         
-        // User is ready to attack the defender
+        // User attack the defender
         
         if (characterSelected && defenderSelected && !gameOver) {
         
-        // User attacks the defender and decreases the defender's health points
+        //  Decreases the defender's health points
         
         defender.health = defender.health - character.attackPower;
         
@@ -412,13 +351,12 @@ var characters = {
         
         
         
-        // User's attack power increases
         
         character.attackPower = character.attackPower + character.attackPower;
         
         
         
-        // If defender is still alive, they counter attack the user
+        // If defender still alive, they counter attack the user
         
         if (defender.health > 0) {
         
@@ -428,7 +366,6 @@ var characters = {
         
         
         
-        // Check if the user survives the attack
         
         if (character.health > 0) {
         
@@ -458,7 +395,6 @@ var characters = {
         
         
         
-        // Check if the user has won the game
         
         if (enemiesDefeated === 3) {
         
